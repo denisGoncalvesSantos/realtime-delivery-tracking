@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestão de Entregadores (Realtime)</title>
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- Seu CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <h1>Entregadores</h1>
+    <div id="stats" class="stats"></div>
+
+
+    <input
+      type="text"
+      id="search"
+      placeholder="Buscar por nome..."
+    />
+
+    <div class="filters">
+      <label>
+        <input type="checkbox" id="fAtivo" checked />
+        Ativo
+      </label>
+      <label>
+        <input type="checkbox" id="fInativo" checked />
+        Inativo
+      </label>
+    </div>
+
+    <div class="buttons">
+      <button id="btnAll">Ver todos</button>
+      <button id="btnClear">Limpar rota</button>
+    </div>
+
+    <div id="lista" class="list"></div>
+  </aside>
+
+  <!-- ===== MAPA ===== -->
+  <main id="map"></main>
+
+</div>
+
+<!-- Socket.IO -->
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- App -->
+<script src="app.js"></script>
+
+</body>
+</html>
